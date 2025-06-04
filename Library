@@ -1,0 +1,29 @@
+public class LibraryTest {
+    public static void main(String[] args) {
+        // Create Library instance
+        Library library = new Library();
+
+        // Create and add books
+        Book book1 = new Book("The Hobbit", "J.R.R. Tolkien", 4);
+        Book book2 = new Book("Pride and Prejudice", "Jane Austen", 2);
+        library.addBook(book1);
+        library.addBook(book2);
+
+        // Display before update
+        System.out.println("Before title update:");
+        library.displayLibrary();
+
+        // Update book title (object reference)
+        library.updateBookTitle(book1, "The Hobbit: An Unexpected Journey");
+
+        // Display after update
+        System.out.println("\nAfter title update:");
+        library.displayLibrary();
+
+        // Demonstrate primitive passing
+        int number = 123;
+        System.out.println("\nPrimitive value before method call: " + number);
+        library.attemptPrimitiveChange(number);
+        System.out.println("Primitive value after method call: " + number);
+    }
+}
