@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Library {
+    private List<Book> books;
+
+    // Constructor initializes the book list
+    public Library() {
+        books = new ArrayList<>();
+    }
+
+    // Add a book to the library
+    public void addBook(Book book) {
+        books.add(book);
+    }
+
+    // Update book title (demonstrates object reference passing)
+    public void updateBookTitle(Book book, String newTitle) {
+        System.out.println("Updating book title from \"" + book.getTitle() + "\" to \"" + newTitle + "\".");
+        book.setTitle(newTitle);
+    }
+
+    // Attempt to change a primitive value
+    public void attemptPrimitiveChange(int number) {
+        System.out.println("Inside method before change: " + number);
+        number = 999;
+        System.out.println("Inside method after change: " + number);
+    }
+
+    // Display all books
+    public void displayLibrary() {
+        System.out.println("Library Inventory:");
+        for (Book book : books) {
+            book.displayInfo();
+        }
+    }
+}
